@@ -42,7 +42,7 @@ plt.show()
 # standardize the data for PCA
 x = StandardScaler().fit_transform(x)
 
-# 'dimension reduction' PCAE projection to 2D
+# 'dimension reduction' PCA projection to 2D
 pca = PCA(n_components = 2)
 principalComponents = pca.fit_transform(x)
 principalDf = pd.DataFrame(data = principalComponents, columns = ['PC 1', 'PC 2'])
@@ -62,4 +62,3 @@ for target, color in zip(targets, colors):
     ax.scatter(finalDf.loc[indicesToKeep, 'PC 1'], finalDf.loc[indicesToKeep, 'PC 2'], c = color, s = 50)
 ax.legend(targets)
 ax.grid()
-plt.show()
